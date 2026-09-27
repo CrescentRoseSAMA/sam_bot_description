@@ -31,14 +31,14 @@ def generate_launch_description():
             'use_sim_time': LaunchConfiguration('use_sim_time'),
         }]
     )
-    # rviz_node = Node(
-    #     package='rviz2',
-    #     executable='rviz2',
-    #     name='rviz2',
-    #     output='screen',
-    #     arguments=['-d', LaunchConfiguration('rvizconfig')],
-    #     parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
-    # )
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', LaunchConfiguration('rvizconfig')],
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
+    )
     gz_server = GzServer(
         world_sdf_file=world_path,
         container_name='ros_gz_container',
@@ -84,7 +84,7 @@ def generate_launch_description():
              parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
              output='screen'),
         robot_localization_node,
-        # rviz_node,
+        rviz_node,
         gz_server,
         ros_gz_bridge,
 
