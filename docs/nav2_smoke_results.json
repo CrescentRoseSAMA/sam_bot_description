@@ -1,0 +1,14 @@
+{
+  "status": 4,
+  "goal_xy": [
+    -2.5,
+    -2.7
+  ],
+  "final_localized_xy": [
+    -2.7298756697541786,
+    -2.6950865692946664
+  ],
+  "distance_to_goal": 0.22992817432021745,
+  "test_map": "rasterized scene geometry; AMCL initialized from known spawn; not SLAM",
+  "logs": "/tmp/sam_nav_check_7b3dpshj"
+}

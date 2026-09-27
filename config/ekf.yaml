@@ -1,0 +1,29 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.2
+    two_d_mode: true
+    publish_tf: true
+    publish_acceleration: false
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_footprint
+    world_frame: odom
+
+    # The adapter supplies explicit variances; raw Gazebo odom has zeros.
+    odom0: /demo/odom_with_covariance
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true, true, false,
+                   false, false, false,
+                   false, false, false]
+    odom0_queue_size: 10
+    # vx from wheel odometry; vy=0 is the axle's no-sideways-slip constraint.
+    # Use IMU yaw rate, rather than fusing an uncalibrated wheel yaw variance.
+    imu0: /demo/imu
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,
+                  false, false, false]
+    imu0_queue_size: 10
