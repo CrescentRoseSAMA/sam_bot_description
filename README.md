@@ -25,6 +25,10 @@ ros2 launch sam_bot_description display.launch.py
 
 首次使用 `rosdep` 时，先运行 `sudo rosdep init` 和 `rosdep update`。
 
+`display.launch.py` 加载本包的 `world/baseline.sdf`（世界名 `nav_lab`），
+并在 S 点附近生成机器人：模型原点为 `(-3.38, -2.7, 0.20)` 米，
+初始朝向为 +X，`base_footprint` 的水平位置为 `(-3.5, -2.7)` 米。
+
 `config/nav2_params.yaml` 是默认导航配置；`config/nav2_params_mppi.yaml` 保留 MPPI 配置。巡检场景需要另行安装 `nav_lab_scene` 包。
 
 项目采用 Apache-2.0 许可证。

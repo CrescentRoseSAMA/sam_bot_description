@@ -23,7 +23,7 @@ endif()
 
 
 install(
-  DIRECTORY src launch rviz config world docs
+  DIRECTORY src launch rviz config world docs maps
   DESTINATION share/${PROJECT_NAME}
 )
 
