@@ -76,8 +76,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         # Keep this single-machine simulation separate from LAN clock and TF publishers.
-        DeclareLaunchArgument(name='discovery_range', default_value='LOCALHOST', description='ROS discovery scope: LOCALHOST for this computer, SUBNET for networked robots'),
-        SetEnvironmentVariable('ROS_AUTOMATIC_DISCOVERY_RANGE', LaunchConfiguration('discovery_range')),
         DeclareLaunchArgument(name='use_sim_time', default_value='True', description='Flag to enable use_sim_time'),
         DeclareLaunchArgument(name='model', default_value=default_model_path, description='Absolute path to robot model file'),
         DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path, description='Absolute path to rviz config file'),
